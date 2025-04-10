@@ -3,7 +3,6 @@ const cors = require('cors');
 const path = require('path');
 const mongodb = require('./DB/mongo.js');
 const User = require('./Schema/Superadmin.js');
-// import path from "path";
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -24,7 +23,6 @@ const admindelete=require("./Router/Admindelete.js");
 app.use('/api',admindelete);
 const adminupdate=require("./Router/Adminupdate.js");
 app.use('/api',adminupdate);
-
 const franchise=require("./Router/Franchise.js");
 app.use('/api',franchise);
 const dealership=require("./Router/Dealership.js");
@@ -62,9 +60,6 @@ app.get('*',(_,res)=>{
     res.sendFile(path.resolve(_dirname,"frontend","build","index.html"));
 }
 )
-
-
-
 app.listen(PORT, () => {
     console.log(`Connection successful on port ${PORT}`);
 });
