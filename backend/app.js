@@ -5,7 +5,11 @@ const mongodb = require('./DB/mongo.js');
 const User = require('./Schema/Superadmin.js');
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: '*', // or restrict to your frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  }));
 const _dirname=path.resolve();
 const superadmin=require("./Router/SuperA.js");
 app.use('/api',superadmin);
