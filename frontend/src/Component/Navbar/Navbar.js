@@ -77,7 +77,7 @@ const Navbar = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/userlogin", {
+      const response = await axios.post("https://winkget-8.onrender.com/api/userlogin", {
         email,
         password,
       });
@@ -112,7 +112,7 @@ const Navbar = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/Registers",
+        "https://winkget-8.onrender.com/api/Registers",
         {
           name,
           email,
@@ -138,7 +138,7 @@ const Navbar = () => {
 
   // Fetch Cities
   useEffect(() => {
-    axios.get("http://localhost:8000/api/cities")
+    axios.get("https://winkget-8.onrender.com/api/cities")
       .then(response => setCities(response.data || []))
       .catch(error => console.error("Error fetching cities:", error));
   }, []);
