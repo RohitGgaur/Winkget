@@ -83,7 +83,7 @@ const Register = () => {
         }
         
         try {
-            const response = await axios.post('http://localhost:8000/api/Registration', {
+            const response = await axios.post('https://winkget-8.onrender.com/api/Registration', {
                 name,
                 email,
                 password,

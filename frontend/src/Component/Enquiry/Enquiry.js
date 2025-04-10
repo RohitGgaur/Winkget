@@ -40,16 +40,14 @@ const Enquiry = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/Regist", {
+      const response = await fetch("https://winkget-8.onrender.com/api/Regist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
       const result = await response.json();
-
       if (response.ok) {
         toast.success("Your enquiry has been submitted successfully!");
         // Reset form

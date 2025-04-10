@@ -145,7 +145,7 @@ const Navbar = () => {
 
   // Fetch Categories
   useEffect(() => {
-    axios.get("http://localhost:8000/api/categories/tree")
+    axios.get("https://winkget-8.onrender.com/api/categories/tree")
       .then((response) => {
         console.log("Fetched Categories Data:", response.data); // Check what API returns
         if (Array.isArray(response.data) && response.data.length > 0) {
