@@ -43,9 +43,9 @@ function AppContent() {
 
   // Define route patterns where Navbar should NOT appear
   const hideNavbarRoutes = [
-    "/",
     "/Superlogin",
     "/Adminlogin",
+    "/Superadmin",
     "/superdesk/:id",
     "/superdesk/:id/vender",
     "/superdesk/:id/admin",

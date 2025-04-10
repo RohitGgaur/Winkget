@@ -135,7 +135,7 @@ const Home = () => {
       const categoryArray = Array.isArray(response.data.data) ? response.data.data : [];
       setCategories(categoryArray);
     });
-  
+
   }, []);
 
   // Fetch categories in tree format
@@ -147,7 +147,8 @@ const Home = () => {
   }, []);
 
 
-  const visibleCategories = categories.slice(0, 4);
+  const visibleCategories = Array.isArray(categories) ? categories.slice(0, 4) : [];
+
 
   return (
     <div className="app">
