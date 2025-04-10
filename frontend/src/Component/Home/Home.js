@@ -95,7 +95,7 @@ const Home = () => {
       .get("http://localhost:8000/api/categories")
       .then((response) => {
         console.log("Data:", response.data);
-        setCategorie(response.data); // Expected format: [{ name: "Electronics", subcategories: ["Mobiles", "Laptops"] }, ...]
+        setCategories(response.data); // Expected format: [{ name: "Electronics", subcategories: ["Mobiles", "Laptops"] }, ...]
       })
       .catch((error) => {
         console.error("Error fetching categories:", error);
@@ -129,15 +129,13 @@ const Home = () => {
 
   // Fetch categories on component mount
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/categories")
-      .then((response) => {
-        console.log("Data:", response.data);
-        setCategories(response.data); // Assuming response.data is an array of objects
-      })
-      .catch((error) => {
-        console.error("Error fetching categories:", error);
-      });
+    axios.get("http://localhost:8000/api/categories")
+    .then((response) => {
+      console.log("Data:", response.data); // check this output
+      const categoryArray = Array.isArray(response.data.data) ? response.data.data : [];
+      setCategories(categoryArray);
+    });
+  
   }, []);
 
   // Fetch categories in tree format
@@ -148,12 +146,7 @@ const Home = () => {
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
 
-  const cardRows = [
-    { title: "Latest Deals", cards: ["Card 1", "Card 2", "Card 3", "Card 4", "Card 5"] },
-    { title: "Popular Picks", cards: ["Card 6", "Card 7", "Card 8", "Card 9", "Card 10"] },
-    { title: "Recommended", cards: ["Card 11", "Card 12", "Card 13", "Card 14", "Card 15"] },
-    { title: "Best Offers", cards: ["Card 16", "Card 17", "Card 18", "Card 19", "Card 20"] }
-  ];
+
   const visibleCategories = categories.slice(0, 4);
 
   return (
