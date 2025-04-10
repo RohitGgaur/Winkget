@@ -63,6 +63,7 @@ function AppContent() {
     "/UserDeshboard/:userId/projects",
     "/UserDeshboard/:userId/tasks",
     "/UserDeshboard/:userId/profile",
+    "/UserDeshboard/:userId/Dashboardcontent",
     "/admindesk/:id",
     "Enquiries/:adminCity",
     
@@ -93,7 +94,7 @@ function AppContent() {
         
         {/* User Dashboard with Nested Routes */}
         <Route path="/UserDeshboard/:userId" element={<Userdashboard />}>
-          <Route index element={<Superdeskboard />} />
+          <Route path="Dashboardcontent" element={<DashboardContent />} />
           <Route path="profile" element={<Profile />} />
           <Route path="messages" element={<Messages />} />
           <Route path="analytics" element={<Analytics />} />

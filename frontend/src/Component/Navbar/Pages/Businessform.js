@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { LayoutDashboard, Users, Settings, LogOut, Building2, Castle, FolderInput, Play, ChevronLeft } from 'lucide-react';
-// import '../../Superadmin/desh.css';
+import './Business.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
@@ -451,82 +451,82 @@ const Vender = ({  categoryId, subId }) => {
   };
 
   return (
-    <div className="admin-container">
-      <div className="main-content">
+    <div className="admin-containers">
+      <div className="main-body">
         <div className="container">
 
       
 
-              <div className="modalcontent">
+              <div className="formcontent">
                 <form onSubmit={handleSubmit}>
                   {/* Step 1 */}
                   {step === 1 && (
                     <>
                       <h7 >Personal Information</h7>
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="text"
                           id="name"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Enter Your Name"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="email"
                           id="email"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Enter Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="text"
                           id="name"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Mobile Number"
                           value={mobile}
                           onChange={(e) => setMobile(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="city"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Enter City"
                           value={citys}
                           onChange={(e) => setCitys(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="address"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Area"
                           value={businessaddress}
                           onChange={(e) => setBusinessaddress(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="text"
                           id="name"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Enter password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
@@ -537,7 +537,7 @@ const Vender = ({  categoryId, subId }) => {
                         <input
                           type="file"
                           id="photog"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Business Document"
                           onChange={handleUpload}
                           accept="image/*"
@@ -551,11 +551,11 @@ const Vender = ({  categoryId, subId }) => {
                   {step === 2 && (
                     <>
                       <h5>Business Details</h5>
-                      <div className="form-grp mt-2">
+                      <div className="form-gp mt-2">
                         <input
                           type="text"
                           id="business"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Business Name"
                           value={businessname}
                           onChange={(e) => setBusinessname(e.target.value)}
@@ -563,22 +563,22 @@ const Vender = ({  categoryId, subId }) => {
                         />
                       </div>
 
-                      <div className="form-grp mt-2">
+                      <div className="form-gp mt-2">
                         <input
                           type="Number"
                           id="number"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Business Number"
                           value={businessnumber}
                           onChange={(e) => setBusinessnumber(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp mt-2">
+                      <div className="form-gp mt-2">
                         <input
                           type="email"
                           id="email"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Business Email"
                           value={businessemail}
                           onChange={(e) => setBusinessemail(e.target.value)}
@@ -586,8 +586,8 @@ const Vender = ({  categoryId, subId }) => {
                         />
                       </div>
 
-                      <div className="form-grp mt-2">
-                        <select className="form-controler0" value={city} onChange={handleCityChange} required>
+                      <div className="form-gp mt-2">
+                        <select className="form-controlers0" value={city} onChange={handleCityChange} required>
                           <option value="">Select City</option>
                           {cities.length > 0 ? (
                             cities.map((cit) => (
@@ -601,9 +601,9 @@ const Vender = ({  categoryId, subId }) => {
                         </select>
                       </div>
 
-                      <div className="form-grp mt-2">
+                      <div className="form-gp mt-2">
                         <select
-                          className="form-controler0"
+                          className="form-controlers0"
                           value={selectlocality}
                           onChange={handleLocality}
                           required
@@ -621,8 +621,8 @@ const Vender = ({  categoryId, subId }) => {
                           )}
                         </select>
                       </div>
-                      <div className="form-grp mt-2">
-                        <select className="form-controler0" value={category} onChange={handleCategoryChange} required>
+                      <div className="form-gp mt-2">
+                        <select className="form-controlers0" value={category} onChange={handleCategoryChange} required>
                           <option value="">Select Category</option>
                           {categories.length > 0 ? (
                             categories.map((cat) => (
@@ -635,9 +635,9 @@ const Vender = ({  categoryId, subId }) => {
                           )}
                         </select>
                       </div>
-                      <div className="form-grp mt-2">
+                      <div className="form-gp mt-2">
                         <select
-                          className="form-controler0"
+                          className="form-controlers0"
                           value={selectedSubCategory}
                           onChange={handleSubCategory}
                           required
@@ -664,33 +664,33 @@ const Vender = ({  categoryId, subId }) => {
                   {step === 3 && (
                     <>
                       <h4>Business Details</h4>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="Number"
                           id="type"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Number OF Employee"
                           value={numberofemployee}
                           onChange={(e) => setNumberofemployee(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp ">
+                      <div className="form-gp ">
                         <input
                           type="text"
                           id="type"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Business Type"
                           value={businesstype}
                           onChange={(e) => setBusinesstype(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp ">
+                      <div className="form-gp ">
                         <input
                           type="text"
                           id="year"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Establishment Year"
                           value={establishment}
                           onChange={(e) => setEstablishment(e.target.value)}
@@ -699,12 +699,12 @@ const Vender = ({  categoryId, subId }) => {
                       </div>
 
 
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="file"
                           id="photo"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder='Business Document'
                           onChange={handleProfile}
                           accept="image/*"
@@ -718,55 +718,55 @@ const Vender = ({  categoryId, subId }) => {
                   {step === 4 && (
                     <>
                       <h6>Financial Details</h6>
-                      <div className="form-grp ">
+                      <div className="form-gp ">
                         <input
                           type="text"
                           id="type"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Annual Tumover"
                           value={annualtumover}
                           onChange={(e) => setAnnualtumover(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="ebitda"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="EBITDA"
                           value={editda}
                           onChange={(e) => setEditda(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="ebitdamargin"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="EBITDA Margin"
                           value={ededitamargin}
                           onChange={(e) => setEdeditamargin(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="inventory"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Inventory Value"
                           value={inventoryvalue}
                           onChange={(e) => setInventoryvalue(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="gross"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="gross Income"
                           value={grossincome}
                           onChange={(e) => setGrossincome(e.target.value)}
@@ -774,22 +774,22 @@ const Vender = ({  categoryId, subId }) => {
                         />
                       </div>
 
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="looking"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Looking For"
                           value={lookingfor}
                           onChange={(e) => setLookingfor(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="amount"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Amount"
                           value={amount}
                           onChange={(e) => setAmount(e.target.value)}
@@ -802,55 +802,55 @@ const Vender = ({  categoryId, subId }) => {
                   {step === 5 && (
                     <>
                       <h4>About Business</h4>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="rental"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Rental"
                           value={rental}
                           onChange={(e) => setRental(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="about"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="About......"
                           value={about}
                           onChange={(e) => setAbout(e.target.value)}
                           required
                           style={{ height: "80px" }} />
                       </div>
-                      <div className="form-grp">
+                      <div className="form-gp">
                         <input
                           type="text"
                           id="type"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Website"
                           value={website}
                           onChange={(e) => setWebsite(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp ">
+                      <div className="form-gp ">
                         <input
                           type="text"
                           id="facebook"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Facebook"
                           value={facebook}
                           onChange={(e) => setFacebook(e.target.value)}
                           required
                         />
                       </div>
-                      <div className="form-grp ">
+                      <div className="form-gp ">
                         <input
                           type="text"
                           id="instagram"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder="Instagram"
                           value={instagram}
                           onChange={(e) => setInstagram(e.target.value)}
@@ -859,12 +859,12 @@ const Vender = ({  categoryId, subId }) => {
                       </div>
 
 
-                      <div className="form-grp">
+                      <div className="form-gp">
 
                         <input
                           type="file"
                           id="photo"
-                          className="form-controler"
+                          className="form-controlers"
                           placeholder='Upload Bannner'
                           onChange={handleBanner}
                           accept="image/*"
@@ -876,7 +876,14 @@ const Vender = ({  categoryId, subId }) => {
                     </>
                   )}
                   {/* Navigation Buttons */}
-                  <div className="button-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "460px", gap: "110px", position: "fixed" }}>
+                  <div className="button-group" style={{ 
+                     display: "flex",
+                     justifyContent: "space-between",
+                     alignItems: "center",
+                     marginTop: "20px",
+                     gap: "20px",
+                     position: "relative"
+                  }}>
                     {step > 1 && (
                       <button
                         type="button"
@@ -931,9 +938,6 @@ const Vender = ({  categoryId, subId }) => {
 
                 </form>
               </div>
-           
-          
-        
         </div>
       </div>
     </div>

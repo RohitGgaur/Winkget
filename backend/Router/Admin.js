@@ -63,7 +63,7 @@ router.post('/Register', async (req, res) => {
 router.post('/Adminlogin', async (req, res) => {
     const { email, password } = req.body;
 
-    console.log("hitted");
+    // console.log("hitted");
     
     if (!email || !password) {
         return res.status(405).json("Please fill in all details");
@@ -75,14 +75,14 @@ router.post('/Adminlogin', async (req, res) => {
 
 
         if (!user) {
-            console.log("bhkku");
+           
             return res.status(401).json({ error: "Invalid Credentials" });
           
         }
 
 
         if (password !== user.password) {
-            console.log("bhkkp");
+            // console.log("bhkkp");
         
             return res.status(401).json({ error: "Invalid Credentials" });
         }

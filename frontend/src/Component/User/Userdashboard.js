@@ -51,7 +51,7 @@ const Userdashboard = () => {
   return (
     <div className="dashboard-container0">
       {/* Sidebar */}
-      <div className={`sidebar ${minimized ? 'minimized' : ''}`}>
+      <div className={`sidebars ${minimized ? 'minimized' : ''}`}>
         {/* Toggle button */}
         <div className="toggle-container">
           <button 
@@ -150,7 +150,7 @@ const Userdashboard = () => {
         {/* Main menu items */}
       
          <div className="menu-container">
-          <Link to="" className="menu-item">
+          <Link to="Dashboardcontent" className="menu-item">
             <div className="menu-icon">🏠</div>
             {!minimized && <span>Dashboard</span>}
           </Link>
@@ -174,7 +174,7 @@ const Userdashboard = () => {
       </div>
 
       {/* Main content area */}
-      <div className="main-content9">
+      <div className="main-contents">
         <Outlet />
       </div>
     </div>

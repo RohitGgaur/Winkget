@@ -3,10 +3,11 @@ const cors = require('cors');
 const path = require('path');
 const mongodb = require('./DB/mongo.js');
 const User = require('./Schema/Superadmin.js');
+// import path from "path";
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+const _dirname=path.resolve();
 const superadmin=require("./Router/SuperA.js");
 app.use('/api',superadmin);
 const superget=require("./Router/superget.js");
@@ -56,7 +57,11 @@ const enquiry=require("./Router/Enquiry.js");
 app.use('/api',enquiry);
 const PORT = process.env.PORT || 8000;
 
-
+app.use(express.static(path.join(_dirname,"/frontend/build")));
+app.get('*',(_,res)=>{
+    res.sendFile(path.resolve(_dirname,"frontend","build","index.html"));
+}
+)
 
 
 
