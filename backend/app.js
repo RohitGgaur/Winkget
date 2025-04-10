@@ -6,7 +6,7 @@ const User = require('./Schema/Superadmin.js');
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: '*', // or restrict to your frontend domain
+    origin: 'https://winkget-8.onrender.com', // or restrict to your frontend domain
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }));

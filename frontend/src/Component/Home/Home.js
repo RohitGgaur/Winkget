@@ -28,7 +28,7 @@ const Home = () => {
   // Fetch Vendor Data
   const fetchVendors = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/venderget");
+      const response = await axios.get("https://winkget-8.onrender.com/api/venderget");
       console.log("Fetched vendor details:", response.data);
 
       if (Array.isArray(response.data)) {
@@ -49,7 +49,7 @@ const Home = () => {
     const controller = new AbortController();
     const fetchFranchise = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/Franchiseget", { signal: controller.signal });
+        const response = await axios.get("https://winkget-8.onrender.com/api/Franchiseget", { signal: controller.signal });
         console.log("Fetched Franchise details:", response.data);
         if (Array.isArray(response.data)) {
           setFranchise(response.data);
@@ -71,7 +71,7 @@ const Home = () => {
     const controller = new AbortController();
     const fetchDealership = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/Dealershipget", { signal: controller.signal });
+        const response = await axios.get("https://winkget-8.onrender.com/api/Dealershipget", { signal: controller.signal });
         console.log("Fetched dealership details:", response.data);
         if (Array.isArray(response.data)) {
           setDealership(response.data);
